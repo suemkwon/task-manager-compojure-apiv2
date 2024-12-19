@@ -12,14 +12,14 @@
 (def feature-flags (atom {"task-categories" {:id "task-categories"
                                              :name "Task Categories"
                                              :description "Enable task categorization feature"
-                                             :enabled false}
+                                             :enabled true}
                           "task-priorities" {:id "task-priorities"
                                              :name "Task Priorities"
                                              :description "Enable task priority levels"
                                              :enabled true}}))
 
 (defn feature-enabled? [flag-id]
-  (get-in @feature-flags [flag-id :enabled] false))
+  (get-in @feature-flags [flag-id :enabled] true))
 
 (defn toggle-feature! [flag-id]
   (when (contains? @feature-flags flag-id)

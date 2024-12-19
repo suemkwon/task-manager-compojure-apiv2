@@ -1,0 +1,12 @@
+{:lint-as {compojure.api.sweet/api clojure.core/def
+           compojure.api.sweet/context clojure.core/def
+           compojure.api.sweet/GET clojure.core/def
+           compojure.api.sweet/POST clojure.core/def
+           compojure.api.sweet/PUT clojure.core/def
+           compojure.api.sweet/DELETE clojure.core/def
+           schema.core/defschema clojure.core/def}
+
+ :linters {:unresolved-symbol {:exclude [ok not-found
+                                         id task path-params body]}
+           :unresolved-var {:exclude [ring.util.http-response/ok
+                                      ring.util.http-response/not-found]}}}
